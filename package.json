@@ -1,9 +1,13 @@
 {
-  "name": "ticket-tracker-common",
+  "name": "@tickets11131/ticket-tracker-common",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+    "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
     "publish": "version patch && npm run build && npm publish"
