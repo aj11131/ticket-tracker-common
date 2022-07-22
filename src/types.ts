@@ -1,0 +1,34 @@
+export interface ErrorOutput {
+  message: string;
+  field?: string;
+}
+
+export enum TicketStatusEnum {
+  NEW = "new",
+  ACTIVE = "active",
+  CLOSED = "closed",
+}
+
+export enum TicketPriorityEnum {
+  LOW = "low",
+  MEDIUM = "medium",
+  HIGH = "high",
+}
+
+export interface Ticket {
+  id: string;
+  title: string;
+  description: string;
+  priority: TicketPriorityEnum;
+  assigned: User;
+  creationDate: Date;
+  closedDate: Date | null;
+  tags: string[];
+  status: TicketStatusEnum;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+}
