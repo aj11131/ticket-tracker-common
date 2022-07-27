@@ -16,12 +16,13 @@ export enum TicketPriorityEnum {
 }
 
 export interface Ticket {
-  id: string;
+  id?: string;
+  ticketId?: number;
   title: string;
   description: string;
   priority: TicketPriorityEnum;
   assigned: User;
-  creationDate: Date;
+  creationDate: Date | null;
   closedDate: Date | null;
   tags: string[];
   status: TicketStatusEnum;
