@@ -22,7 +22,7 @@ export interface Ticket {
   description: string;
   priority: TicketPriorityEnum;
   assigned: User;
-  creationDate: Date | null;
+  creationDate: Date;
   closedDate: Date | null;
   tags: string[];
   status: TicketStatusEnum;
