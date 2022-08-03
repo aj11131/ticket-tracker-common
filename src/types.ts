@@ -31,5 +31,6 @@ export interface Ticket {
 export interface User {
   id: string;
   email: string;
-  name: string;
+  first: string;
+  last: string;
 }
