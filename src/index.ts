@@ -11,3 +11,7 @@ export * from "./middlewares/require-auth";
 export * from "./middlewares/validate-request";
 
 export * from "./types";
+
+export * from "./events/listeners/account-created-listener";
+
+export * from "./events/publishers/account-created-publisher";
