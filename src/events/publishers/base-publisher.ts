@@ -11,6 +11,7 @@ export abstract class BasePublisher<T> {
     const params = {
       Message: messageJson,
       TopicArn: this.topicArn,
+      MessageGroupId: "ticket-tracker",
     };
 
     try {
