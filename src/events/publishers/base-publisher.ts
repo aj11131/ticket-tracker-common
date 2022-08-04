@@ -1,4 +1,5 @@
 import AWS from "aws-sdk";
+import { uuid } from "uuidv4";
 
 AWS.config.update({ region: "us-east-1" });
 
@@ -12,6 +13,7 @@ export abstract class BasePublisher<T> {
       Message: messageJson,
       TopicArn: this.topicArn,
       MessageGroupId: "ticket-tracker",
+      MessageDeduplicationId: uuid(),
     };
 
     try {
