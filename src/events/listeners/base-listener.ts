@@ -4,11 +4,12 @@ import https from "https";
 
 export abstract class BaseListener {
   abstract queueUrl: string;
+  abstract handleMessage(message: AWS.SQS.Message): Promise<void>;
 
-  listen(handleMessage: (message: AWS.SQS.Message) => Promise<void>) {
+  listen() {
     const consumer = Consumer.create({
       queueUrl: this.queueUrl,
-      handleMessage: handleMessage,
+      handleMessage: this.handleMessage,
       sqs: new AWS.SQS({
         httpOptions: {
           agent: new https.Agent({
